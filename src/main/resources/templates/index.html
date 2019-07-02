@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div align="center">
+    <form method="post" th:action="@{/}" th:object="${person}">
+        <input type="text" name="name" th:field="*{name}" />
+
+        <button type="submit">Send</button>
+    </form>
+
+    <h1>List of items:</h1>
+    <div th:each="person : ${list}">
+        <span th:text="${person.id}"/>:
+        <span th:text="${person.name}"/>
+    </div>
+  </div>
+</body>
+</html>
